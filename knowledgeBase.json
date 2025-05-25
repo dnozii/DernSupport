@@ -1,0 +1,74 @@
+{
+    "articles": [
+      {
+        "id": "kb_001",
+        "title": "How to Fix a Computer That Won't Turn On",
+        "category": "hardware",
+        "content": "Step-by-step guide to diagnose and fix power issues with your computer...",
+        "tags": ["power", "hardware", "troubleshooting"],
+        "views": 1234,
+        "rating": 4.8,
+        "readTime": 5,
+        "createdAt": "2025-03-15T10:00:00Z",
+        "updatedAt": "2025-05-10T14:30:00Z",
+        "author": "Tech Support Team"
+      },
+      {
+        "id": "kb_002",
+        "title": "Fixing Blue Screen of Death (BSOD) Errors",
+        "category": "software",
+        "content": "Common causes and solutions for Windows blue screen errors...",
+        "tags": ["windows", "bsod", "software", "error"],
+        "views": 987,
+        "rating": 4.6,
+        "readTime": 3,
+        "createdAt": "2025-03-20T09:15:00Z",
+        "updatedAt": "2025-05-05T16:20:00Z",
+        "author": "Tech Support Team"
+      },
+      {
+        "id": "kb_003",
+        "title": "Troubleshooting Wi-Fi Connection Problems",
+        "category": "network",
+        "content": "Resolve common Wi-Fi connectivity issues and improve your connection...",
+        "tags": ["wifi", "network", "connectivity", "internet"],
+        "views": 756,
+        "rating": 4.7,
+        "readTime": 7,
+        "createdAt": "2025-04-01T11:30:00Z",
+        "updatedAt": "2025-05-12T10:45:00Z",
+        "author": "Network Specialist"
+      }
+    ],
+    "categories": [
+      {
+        "id": "hardware",
+        "name": "Hardware Issues",
+        "description": "Troubleshoot computer hardware problems, upgrades, and repairs",
+        "articleCount": 12,
+        "icon": "fas fa-laptop"
+      },
+      {
+        "id": "software",
+        "name": "Software Problems",
+        "description": "Fix software installation, configuration, and compatibility issues",
+        "articleCount": 18,
+        "icon": "fas fa-code"
+      },
+      {
+        "id": "network",
+        "name": "Network & Internet",
+        "description": "Resolve connectivity, Wi-Fi, and network configuration problems",
+        "articleCount": 15,
+        "icon": "fas fa-wifi"
+      },
+      {
+        "id": "security",
+        "name": "Security & Viruses",
+        "description": "Remove malware, secure your system, and protect your data",
+        "articleCount": 10,
+        "icon": "fas fa-shield-alt"
+      }
+    ]
+  }
+  

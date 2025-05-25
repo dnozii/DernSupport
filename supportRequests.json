@@ -1,0 +1,46 @@
+{
+    "supportRequests": [
+      {
+        "id": "req_001",
+        "userId": "user_001",
+        "type": "individual",
+        "status": "in-progress",
+        "priority": "medium",
+        "title": "Laptop won't boot",
+        "description": "My laptop suddenly stopped working. When I press the power button, nothing happens.",
+        "deviceInfo": {
+          "type": "laptop",
+          "brand": "Dell",
+          "model": "XPS 15",
+          "operatingSystem": "windows"
+        },
+        "issueType": "hardware",
+        "serviceType": "drop-off",
+        "createdAt": "2025-05-18T10:30:00Z",
+        "updatedAt": "2025-05-20T14:22:00Z",
+        "assignedTechnician": "tech_001",
+        "estimatedCompletion": "2025-05-22T16:00:00Z"
+      },
+      {
+        "id": "req_002",
+        "userId": "user_002",
+        "type": "business",
+        "status": "scheduled",
+        "priority": "high",
+        "title": "Server maintenance required",
+        "description": "Monthly server maintenance and security updates for our main database server.",
+        "companyInfo": {
+          "name": "Acme Corporation",
+          "industry": "technology",
+          "size": "51-200"
+        },
+        "supportType": "server",
+        "urgency": "high",
+        "preferredDate": "2025-05-21T09:00:00Z",
+        "createdAt": "2025-05-19T11:15:00Z",
+        "updatedAt": "2025-05-19T11:15:00Z",
+        "assignedTechnician": "tech_002"
+      }
+    ]
+  }
+  

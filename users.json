@@ -1,0 +1,32 @@
+{
+    "users": [
+      {
+        "id": "user_001",
+        "name": "John Smith",
+        "email": "john.smith@email.com",
+        "password": "$2a$10$example_hashed_password",
+        "type": "individual",
+        "phone": "+1-555-0123",
+        "address": "123 Main St, City, State 12345",
+        "createdAt": "2025-01-15T10:30:00Z",
+        "lastLogin": "2025-05-20T14:22:00Z",
+        "isActive": true
+      },
+      {
+        "id": "user_002",
+        "name": "Acme Corporation",
+        "email": "it@acmecorp.com",
+        "password": "$2a$10$example_hashed_password",
+        "type": "business",
+        "phone": "+1-555-0456",
+        "address": "456 Business Ave, Corporate City, State 67890",
+        "contactPerson": "Jane Doe",
+        "industry": "technology",
+        "companySize": "51-200",
+        "createdAt": "2025-02-01T09:15:00Z",
+        "lastLogin": "2025-05-20T16:45:00Z",
+        "isActive": true
+      }
+    ]
+  }
+  

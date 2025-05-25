@@ -1,0 +1,49 @@
+{
+  "revenue": {
+    "monthly": [
+      { "month": "2025-01", "amount": 32000 },
+      { "month": "2025-02", "amount": 35000 },
+      { "month": "2025-03", "amount": 38000 },
+      { "month": "2025-04", "amount": 42000 },
+      { "month": "2025-05", "amount": 45230 }
+    ],
+    "weekly": [
+      { "week": "2025-W17", "amount": 8500 },
+      { "week": "2025-W18", "amount": 9200 },
+      { "week": "2025-W19", "amount": 10100 },
+      { "week": "2025-W20", "amount": 9800 }
+    ]
+  },
+  "tickets": {
+    "monthly": [
+      { "month": "2025-01", "count": 980 },
+      { "month": "2025-02", "count": 1050 },
+      { "month": "2025-03", "count": 1120 },
+      { "month": "2025-04", "count": 1180 },
+      { "month": "2025-05", "count": 1247 }
+    ],
+    "byType": [
+      { "type": "hardware", "count": 374, "percentage": 30 },
+      { "type": "software", "count": 312, "percentage": 25 },
+      { "type": "network", "count": 249, "percentage": 20 },
+      { "type": "security", "count": 187, "percentage": 15 },
+      { "type": "other", "count": 125, "percentage": 10 }
+    ]
+  },
+  "satisfaction": {
+    "monthly": [
+      { "month": "2025-01", "rating": 4.5 },
+      { "month": "2025-02", "rating": 4.6 },
+      { "month": "2025-03", "rating": 4.7 },
+      { "month": "2025-04", "rating": 4.6 },
+      { "month": "2025-05", "rating": 4.8 }
+    ],
+    "overall": 4.8
+  },
+  "performance": {
+    "averageResolutionTime": 2.4,
+    "firstCallResolution": 0.78,
+    "customerRetention": 0.92,
+    "technicianUtilization": 0.85
+  }
+}

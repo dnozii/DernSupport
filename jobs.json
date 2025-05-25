@@ -1,0 +1,92 @@
+{
+    "jobs": [
+      {
+        "id": "job_001",
+        "requestId": "req_001",
+        "customerId": "user_001",
+        "title": "Laptop Hardware Repair",
+        "description": "Replace faulty motherboard and perform diagnostic tests",
+        "type": "hardware-repair",
+        "priority": "medium",
+        "status": "in-progress",
+        "assignedTechnician": "tech_001",
+        "scheduledDate": "2025-05-22T10:00:00Z",
+        "estimatedDuration": 240,
+        "actualStartTime": "2025-05-22T10:15:00Z",
+        "partsRequired": ["MB001", "RAM002"],
+        "createdAt": "2025-05-18T10:30:00Z",
+        "updatedAt": "2025-05-22T10:15:00Z"
+      },
+      {
+        "id": "job_002",
+        "requestId": "req_002",
+        "customerId": "user_002",
+        "title": "Server Maintenance",
+        "description": "Monthly server maintenance and security updates",
+        "type": "maintenance",
+        "priority": "high",
+        "status": "scheduled",
+        "assignedTechnician": "tech_002",
+        "scheduledDate": "2025-05-21T09:00:00Z",
+        "estimatedDuration": 180,
+        "partsRequired": [],
+        "createdAt": "2025-05-19T11:15:00Z",
+        "updatedAt": "2025-05-19T11:15:00Z"
+      }
+    ],
+    "technicians": [
+      {
+        "id": "tech_001",
+        "name": "John D.",
+        "email": "john.d@dern-support.com",
+        "specialization": "hardware",
+        "level": "senior",
+        "status": "busy",
+        "currentJob": "job_001",
+        "nextAvailable": "2025-05-22T15:00:00Z",
+        "completedJobs": 156,
+        "averageRating": 4.9,
+        "averageResolutionTime": 2.1
+      },
+      {
+        "id": "tech_002",
+        "name": "Mike R.",
+        "email": "mike.r@dern-support.com",
+        "specialization": "network",
+        "level": "senior",
+        "status": "available",
+        "currentJob": null,
+        "nextAvailable": "2025-05-21T09:00:00Z",
+        "completedJobs": 142,
+        "averageRating": 4.8,
+        "averageResolutionTime": 2.3
+      },
+      {
+        "id": "tech_003",
+        "name": "Lisa M.",
+        "email": "lisa.m@dern-support.com",
+        "specialization": "software",
+        "level": "senior",
+        "status": "available",
+        "currentJob": null,
+        "nextAvailable": "2025-05-21T08:00:00Z",
+        "completedJobs": 134,
+        "averageRating": 4.9,
+        "averageResolutionTime": 2.0
+      },
+      {
+        "id": "tech_004",
+        "name": "David L.",
+        "email": "david.l@dern-support.com",
+        "specialization": "general",
+        "level": "junior",
+        "status": "available",
+        "currentJob": null,
+        "nextAvailable": "2025-05-21T08:00:00Z",
+        "completedJobs": 128,
+        "averageRating": 4.7,
+        "averageResolutionTime": 2.6
+      }
+    ]
+  }
+  
