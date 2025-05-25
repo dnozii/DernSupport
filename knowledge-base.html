@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge Base | Dern-Support</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Effects -->
+  <canvas id="backgroundCanvas"></canvas>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <div class="logo-icon">
+            <div class="logo-glow"></div>
+            <div class="logo-inner">DS</div>
+          </div>
+          <span class="logo-text">Dern-Support</span>
+        </a>
+      </div>
+
+      <nav class="nav-desktop">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="support-request.html">Support Request</a></li>
+          <li><a href="knowledge-base.html">Knowledge Base</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+          <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-sun theme-toggle-icon sun-icon"></i>
+            <i class="fas fa-moon theme-toggle-icon moon-icon"></i>
+          </div>
+          <a href="login.html" class="btn btn-outline">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </div>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Knowledge Base</h1>
+        <p>Find answers to common technical issues and learn how to troubleshoot problems yourself</p>
+      </div>
+    </section>
+
+    <section class="knowledge-base">
+      <div class="container">
+        <!-- Search Bar -->
+        <div class="search-section">
+          <div class="search-bar">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search for solutions...">
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="categories-grid">
+          <div class="category-card card">
+            <div class="category-icon">
+              <i class="fas fa-laptop"></i>
+            </div>
+            <h3>Hardware Issues</h3>
+            <p>Troubleshoot computer hardware problems, upgrades, and repairs</p>
+            <div class="article-count">12 articles</div>
+          </div>
+
+          <div class="category-card card">
+            <div class="category-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <h3>Software Problems</h3>
+            <p>Fix software installation, configuration, and compatibility issues</p>
+            <div class="article-count">18 articles</div>
+          </div>
+
+          <div class="category-card card">
+            <div class="category-icon">
+              <i class="fas fa-wifi"></i>
+            </div>
+            <h3>Network & Internet</h3>
+            <p>Resolve connectivity, Wi-Fi, and network configuration problems</p>
+            <div class="article-count">15 articles</div>
+          </div>
+
+          <div class="category-card card">
+            <div class="category-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>Security & Viruses</h3>
+            <p>Remove malware, secure your system, and protect your data</p>
+            <div class="article-count">10 articles</div>
+          </div>
+
+          <div class="category-card card">
+            <div class="category-icon">
+              <i class="fas fa-hdd"></i>
+            </div>
+            <h3>Data Recovery</h3>
+            <p>Recover lost files and backup your important data</p>
+            <div class="article-count">8 articles</div>
+          </div>
+
+          <div class="category-card card">
+            <div class="category-icon">
+              <i class="fas fa-question-circle"></i>
+            </div>
+            <h3>General Help</h3>
+            <p>Basic computer tips, maintenance, and general troubleshooting</p>
+            <div class="article-count">20 articles</div>
+          </div>
+        </div>
+
+        <!-- Popular Articles -->
+        <div class="popular-articles">
+          <h2>Popular Articles</h2>
+          <div class="articles-grid">
+            <article class="article-card card">
+              <div class="article-meta">
+                <span class="category-tag">Hardware</span>
+                <span class="read-time">5 min read</span>
+              </div>
+              <h3>How to Fix a Computer That Won't Turn On</h3>
+              <p>Step-by-step guide to diagnose and fix power issues with your computer.</p>
+              <div class="article-footer">
+                <span class="views"><i class="fas fa-eye"></i> 1,234 views</span>
+                <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+              </div>
+            </article>
+
+            <article class="article-card card">
+              <div class="article-meta">
+                <span class="category-tag">Software</span>
+                <span class="read-time">3 min read</span>
+              </div>
+              <h3>Fixing Blue Screen of Death (BSOD) Errors</h3>
+              <p>Common causes and solutions for Windows blue screen errors.</p>
+              <div class="article-footer">
+                <span class="views"><i class="fas fa-eye"></i> 987 views</span>
+                <span class="rating"><i class="fas fa-star"></i> 4.6</span>
+              </div>
+            </article>
+
+            <article class="article-card card">
+              <div class="article-meta">
+                <span class="category-tag">Network</span>
+                <span class="read-time">7 min read</span>
+              </div>
+              <h3>Troubleshooting Wi-Fi Connection Problems</h3>
+              <p>Resolve common Wi-Fi connectivity issues and improve your connection.</p>
+              <div class="article-footer">
+                <span class="views"><i class="fas fa-eye"></i> 756 views</span>
+                <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="layout/layout.js"></script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Search functionality
+  const searchInput = document.getElementById('searchInput');
+  const categoryCards = document.querySelectorAll('.category-card');
+  const articleCards = document.querySelectorAll('.article-card');
+
+  searchInput.addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    
+    // Filter categories
+    categoryCards.forEach(card => {
+      const title = card.querySelector('h3').textContent.toLowerCase();
+      const description = card.querySelector('p').textContent.toLowerCase();
+      
+      if (title.includes(searchTerm) || description.includes(searchTerm)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Filter articles
+    articleCards.forEach(card => {
+      const title = card.querySelector('h3').textContent.toLowerCase();
+      const description = card.querySelector('p').textContent.toLowerCase();
+      
+      if (title.includes(searchTerm) || description.includes(searchTerm)) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+
+  // Category card click handlers
+  categoryCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const categoryTitle = this.querySelector('h3').textContent;
+      showNotification(`Opening ${categoryTitle} articles...`, 'info');
+    });
+  });
+
+  // Article card click handlers
+  articleCards.forEach(card => {
+    card.addEventListener('click', function() {
+      const articleTitle = this.querySelector('h3').textContent;
+      showNotification(`Opening article: ${articleTitle}`, 'info');
+    });
+  });
+});
+</script>
+</body>
+</html>

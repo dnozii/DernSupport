@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule & Quote | Dern-Support</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Effects -->
+  <canvas id="backgroundCanvas"></canvas>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <div class="logo-icon">
+            <div class="logo-glow"></div>
+            <div class="logo-inner">DS</div>
+          </div>
+          <span class="logo-text">Dern-Support</span>
+        </a>
+      </div>
+
+      <nav class="nav-desktop">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="support-request.html">Support Request</a></li>
+          <li><a href="knowledge-base.html">Knowledge Base</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+          <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-sun theme-toggle-icon sun-icon"></i>
+            <i class="fas fa-moon theme-toggle-icon moon-icon"></i>
+          </div>
+          <a href="login.html" class="btn btn-outline">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </div>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Schedule Repair & Get Quote</h1>
+        <p>Book your repair appointment and get an instant quote for our services</p>
+      </div>
+    </section>
+
+    <section class="schedule-quote">
+      <div class="container">
+        <div class="schedule-grid">
+          <!-- Quote Calculator -->
+          <div class="quote-section">
+            <div class="card">
+              <h2>Get Instant Quote</h2>
+              <form id="quoteForm">
+                <div class="form-group">
+                  <label for="serviceType">Service Type</label>
+                  <select id="serviceType" required>
+                    <option value="" disabled selected>Select service type</option>
+                    <option value="diagnostic" data-price="50">Diagnostic ($50)</option>
+                    <option value="virus-removal" data-price="80">Virus Removal ($80)</option>
+                    <option value="hardware-repair" data-price="120">Hardware Repair ($120+)</option>
+                    <option value="data-recovery" data-price="150">Data Recovery ($150+)</option>
+                    <option value="software-install" data-price="60">Software Installation ($60)</option>
+                    <option value="network-setup" data-price="100">Network Setup ($100)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="deviceType">Device Type</label>
+                  <select id="deviceType" required>
+                    <option value="" disabled selected>Select device</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="desktop">Desktop</option>
+                    <option value="tablet">Tablet</option>
+                    <option value="smartphone">Smartphone</option>
+                    <option value="server">Server (+$50)</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="urgency">Urgency Level</label>
+                  <select id="urgency" required>
+                    <option value="" disabled selected>Select urgency</option>
+                    <option value="standard">Standard (3-5 days)</option>
+                    <option value="priority" data-price="25">Priority (+$25, 1-2 days)</option>
+                    <option value="emergency" data-price="75">Emergency (+$75, same day)</option>
+                  </select>
+                </div>
+
+                <div class="quote-result">
+                  <div class="quote-breakdown">
+                    <div class="quote-line">
+                      <span>Base Service:</span>
+                      <span id="basePrice">$0</span>
+                    </div>
+                    <div class="quote-line">
+                      <span>Device Type:</span>
+                      <span id="devicePrice">$0</span>
+                    </div>
+                    <div class="quote-line">
+                      <span>Urgency:</span>
+                      <span id="urgencyPrice">$0</span>
+                    </div>
+                    <div class="quote-total">
+                      <span>Total Estimate:</span>
+                      <span id="totalPrice">$0</span>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="button" class="btn btn-primary btn-block" id="proceedToSchedule">
+                  Proceed to Schedule
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Schedule Appointment -->
+          <div class="schedule-section">
+            <div class="card">
+              <h2>Schedule Appointment</h2>
+              <form id="scheduleForm">
+                <div class="form-section">
+                  <h3>Contact Information</h3>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="customerName">Full Name</label>
+                      <input type="text" id="customerName" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="customerEmail">Email</label>
+                      <input type="email" id="customerEmail" required>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="customerPhone">Phone</label>
+                      <input type="tel" id="customerPhone" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="customerAddress">Address</label>
+                      <input type="text" id="customerAddress" required>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-section">
+                  <h3>Appointment Details</h3>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="appointmentDate">Preferred Date</label>
+                      <input type="date" id="appointmentDate" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="appointmentTime">Preferred Time</label>
+                      <select id="appointmentTime" required>
+                        <option value="" disabled selected>Select time</option>
+                        <option value="09:00">9:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="13:00">1:00 PM</option>
+                        <option value="14:00">2:00 PM</option>
+                        <option value="15:00">3:00 PM</option>
+                        <option value="16:00">4:00 PM</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-section">
+                  <h3>Service Location</h3>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="dropOff" name="serviceLocation" value="drop-off" checked>
+                      <label for="dropOff">Drop-off at Service Center (Free)</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="onSite" name="serviceLocation" value="on-site">
+                      <label for="onSite">On-site Service (+$30 travel fee)</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="pickup" name="serviceLocation" value="pickup">
+                      <label for="pickup">Pickup & Delivery (+$20 each way)</label>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="additionalNotes">Additional Notes</label>
+                  <textarea id="additionalNotes" rows="3" placeholder="Any specific requirements or additional information..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                  Book Appointment
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Available Time Slots -->
+        <div class="time-slots-section">
+          <div class="card">
+            <h2>Available Time Slots</h2>
+            <div class="calendar-view">
+              <div class="calendar-header">
+                <button class="btn btn-ghost" id="prevWeek">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <h3 id="currentWeek">This Week</h3>
+                <button class="btn btn-ghost" id="nextWeek">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+              <div class="time-slots-grid" id="timeSlotsGrid">
+                <!-- Time slots will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="layout/layout.js"></script>
+  <script>
+    // Quote calculator functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const serviceType = document.getElementById('serviceType');
+      const deviceType = document.getElementById('deviceType');
+      const urgency = document.getElementById('urgency');
+      
+      function updateQuote() {
+        let basePrice = 0;
+        let devicePrice = 0;
+        let urgencyPrice = 0;
+        
+        if (serviceType.value) {
+          basePrice = parseInt(serviceType.selectedOptions[0].dataset.price || 0);
+        }
+        
+        if (deviceType.value === 'server') {
+          devicePrice = 50;
+        }
+        
+        if (urgency.value && urgency.selectedOptions[0].dataset.price) {
+          urgencyPrice = parseInt(urgency.selectedOptions[0].dataset.price);
+        }
+        
+        document.getElementById('basePrice').textContent = `$${basePrice}`;
+        document.getElementById('devicePrice').textContent = `$${devicePrice}`;
+        document.getElementById('urgencyPrice').textContent = `$${urgencyPrice}`;
+        document.getElementById('totalPrice').textContent = `$${basePrice + devicePrice + urgencyPrice}`;
+      }
+      
+      serviceType.addEventListener('change', updateQuote);
+      deviceType.addEventListener('change', updateQuote);
+      urgency.addEventListener('change', updateQuote);
+      
+      // Set minimum date to today
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('appointmentDate').min = today;
+    });
+  </script>
+</body>
+</html>

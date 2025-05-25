@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dern-Support | IT Technical Support</title>
+<link rel="stylesheet" href="styles/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Background Effects -->
+<canvas id="backgroundCanvas"></canvas>
+
+<!-- Navigation -->
+<header class="navbar">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html">
+                <div class="logo-icon">
+                    <div class="logo-glow"></div>
+                    <div class="logo-inner">DS</div>
+                </div>
+                <span class="logo-text">Dern-Support</span>
+            </a>
+        </div>
+
+        <nav class="nav-desktop">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="support-request.html?type=business">Business Support</a>
+                        <a href="support-request.html?type=individual">Individual Support</a>
+                        <a href="knowledge-base.html">Knowledge Base</a>
+                    </div>
+                </li>
+                <li><a href="knowledge-base.html">Knowledge Base</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <div class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-sun theme-toggle-icon sun-icon"></i>
+                    <i class="fas fa-moon theme-toggle-icon moon-icon"></i>
+                </div>
+                <button class="btn btn-outline" id="loginBtn">
+                    <i class="fas fa-user"></i> Login
+                </button>
+                <div class="dropdown">
+                    <button class="btn btn-ghost">Admin</button>
+                    <div class="dropdown-content">
+                        <a href="admin-panel.html"><i class="fas fa-shield-alt"></i> Admin Panel</a>
+                        <a href="admin-panel.html?view=master"><i class="fas fa-shield-virus"></i> Master Admin</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+<!-- Mobile Navigation -->
+<div class="mobile-menu" id="mobileMenu">
+    <div class="container">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li class="mobile-dropdown">
+                <div class="mobile-dropdown-title">
+                    <span>Services</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="mobile-dropdown-content">
+                    <a href="support-request.html?type=business">Business Support</a>
+                    <a href="support-request.html?type=individual">Individual Support</a>
+                    <a href="knowledge-base.html">Knowledge Base</a>
+                </div>
+            </li>
+            <li><a href="knowledge-base.html">Knowledge Base</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li class="mobile-nav-buttons">
+                <div class="theme-toggle" id="mobileThemeToggle">
+                    <i class="fas fa-sun theme-toggle-icon sun-icon"></i>
+                    <i class="fas fa-moon theme-toggle-icon moon-icon"></i>
+                </div>
+                <button class="btn btn-outline" id="mobileLoginBtn">
+                    <i class="fas fa-user"></i> Login
+                </button>
+            </li>
+            <li class="mobile-dropdown">
+                <div class="mobile-dropdown-title">
+                    <span>Admin Access</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="mobile-dropdown-content">
+                    <a href="admin-panel.html"><i class="fas fa-shield-alt"></i> Admin Panel</a>
+                    <a href="admin-panel.html?view=master"><i class="fas fa-shield-virus"></i> Master Admin</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Main Content -->
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">Professional IT Support Services</div>
+                <h1>Expert IT Solutions for <span class="gradient-text">Every Challenge</span></h1>
+                <p>Dern-Support provides comprehensive technical support for businesses and individuals. From hardware repairs to software troubleshooting, we've got you covered.</p>
+                <div class="hero-buttons">
+                    <a href="support-request.html" class="btn btn-primary">
+                        Request Support
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="knowledge-base.html" class="btn btn-outline">
+                        Explore Knowledge Base
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="glow-circle"></div>
+                <div class="rotating-circle"></div>
+                <div class="center-icon">
+                    <div class="icon-glow"></div>
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="floating-icon icon-1">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="floating-icon icon-2">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="floating-icon icon-3">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Services Section -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="services-header">
+                <div class="section-badge">
+                    <i class="fas fa-tools"></i>
+                    Our Services
+                </div>
+                <h2 class="services-title">Professional Support Solutions</h2>
+                <p class="services-subtitle">
+                    From individual consultations to enterprise-level support, we provide comprehensive solutions tailored to your specific needs.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Business Support Card -->
+                <div class="service-card premium">
+                    <div class="service-header">
+                        <div class="service-icon business">
+                            <div class="icon-bg"></div>
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="service-badge">Most Popular</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Business Support</h3>
+                        <p class="service-description">
+                            Comprehensive technical support for businesses of all sizes. Get priority assistance, dedicated account management, and enterprise-grade solutions.
+                        </p>
+                        <div class="service-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>24/7 Priority Support</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Dedicated Account Manager</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Custom Integration Support</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Advanced Analytics Dashboard</span>
+                            </div>
+                        </div>
+                        <div class="service-stats">
+                            <div class="stat">
+                                <span class="stat-number">99.9%</span>
+                                <span class="stat-label">Uptime</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">< 1hr</span>
+                                <span class="stat-label">Response</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-pricing">
+                            <span class="price-from">Starting from</span>
+                            <span class="price">$299/mo</span>
+                        </div>
+                        <a href="schedule-quote.html" class="service-btn primary">
+                            Get Started
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Individual Support Card -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon individual">
+                            <div class="icon-bg"></div>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="service-badge">Personal</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Individual Support</h3>
+                        <p class="service-description">
+                            Personal technical assistance for individuals and freelancers. Get expert help when you need it most with flexible support options.
+                        </p>
+                        <div class="service-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>One-on-One Consultations</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Flexible Scheduling</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Remote Assistance</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Follow-up Support</span>
+                            </div>
+                        </div>
+                        <div class="service-stats">
+                            <div class="stat">
+                                <span class="stat-number">4.9★</span>
+                                <span class="stat-label">Rating</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Clients</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-pricing">
+                            <span class="price-from">Starting from</span>
+                            <span class="price">$99/hr</span>
+                        </div>
+                        <a href="support-request.html" class="service-btn secondary">
+                            Book Session
+                            <i class="fas fa-calendar"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Knowledge Base Card -->
+                <div class="service-card">
+                    <div class="service-header">
+                        <div class="service-icon knowledge">
+                            <div class="icon-bg"></div>
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="service-badge free">Free Access</div>
+                    </div>
+                    <div class="service-content">
+                        <h3>Knowledge Base</h3>
+                        <p class="service-description">
+                            Access our comprehensive library of tutorials, guides, and troubleshooting resources. Learn at your own pace with expert-curated content.
+                        </p>
+                        <div class="service-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>500+ Articles & Guides</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Video Tutorials</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Community Forums</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Regular Updates</span>
+                            </div>
+                        </div>
+                        <div class="service-stats">
+                            <div class="stat">
+                                <span class="stat-number">10K+</span>
+                                <span class="stat-label">Users</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Access</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-footer">
+                        <div class="service-pricing">
+                            <span class="price-from">Always</span>
+                            <span class="price">Free</span>
+                        </div>
+                        <a href="knowledge-base.html" class="service-btn outline">
+                            Explore Now
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Features Banner -->
+            <div class="service-features-banner">
+                <div class="feature-highlight">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Secure & Reliable</h4>
+                        <p>Enterprise-grade security with 99.9% uptime guarantee</p>
+                    </div>
+                </div>
+                <div class="feature-highlight">
+                    <div class="feature-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Fast Response</h4>
+                        <p>Average response time under 1 hour for priority support</p>
+                    </div>
+                </div>
+                <div class="feature-highlight">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="feature-text">
+                        <h4>Expert Team</h4>
+                        <p>Certified professionals with 10+ years of experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Our streamlined process makes it easy to get the IT support you need, when you need it.</p>
+            </div>
+
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Create an Account</h3>
+                    <p>Sign up as a business or individual customer</p>
+                    <div class="step-description">
+                        Register with your details to create your personalized account. This allows us to track your support history and provide faster service.
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Submit a Request</h3>
+                    <p>Describe your technical issue in detail</p>
+                    <div class="step-description">
+                        Fill out our support request form with details about your technical issue. For businesses, we'll schedule an on-site visit. Individuals can arrange drop-off or courier delivery.
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Get Expert Support</h3>
+                    <p>Our technicians will solve your problem</p>
+                    <div class="step-description">
+                        Our skilled technicians will diagnose and fix your issue. You'll receive regular updates throughout the process, and we'll provide recommendations to prevent future problems.
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-cta" style="text-align: center; margin-top: 3rem;">
+                <button class="btn btn-primary" id="createAccountBtn">
+                    Create Your Account
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Contact Us</h2>
+                <p>Have questions or need assistance? Reach out to our team and we'll get back to you as soon as possible.</p>
+            </div>
+
+        <div class="contact-grid">
+            <!-- Contact Info Cards -->
+            <div class="contact-info">
+                <!-- Location Card -->
+                <div class="card" style="margin-bottom: 2rem;">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Our Location</h4>
+                            <p>123 Tech Street, Digital City, DC 12345</p>
+                            <p class="info-detail">Mon-Fri: 9AM-6PM</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phone Card -->
+                <div class="card" style="margin-bottom: 2rem;">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Call Us</h4>
+                            <p>+1 (555) 123-4567</p>
+                            <p class="info-detail">24/7 Emergency Support</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email Card -->
+                <div class="card">
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email Us</h4>
+                            <p>support@dern-support.com</p>
+                            <p class="info-detail">Response within 24 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Map Card (Middle) -->
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <div class="card" style="text-align: center; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); color: white; padding: 3rem;">
+                    <div style="font-size: 4rem; margin-bottom: 1.5rem;">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Find Us</h3>
+                    <p style="margin-bottom: 2rem; opacity: 0.9;">Visit our office or get directions</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn btn-outline" style="color: white; border-color: white;">
+                        <i class="fas fa-external-link-alt"></i>
+                        Open in Google Maps
+                    </a>
+                    
+                    <!-- Professional Support Badge -->
+                    <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(255, 255, 255, 0.1); border-radius: var(--radius-lg); backdrop-filter: blur(10px);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <div style="text-align: center;">
+                                <div style="color: #ffd700; margin-bottom: 0.5rem;">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <small>4.9/5 Rating</small>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-weight: 600; font-size: 1.2rem;">500+</div>
+                                <small>Happy Clients</small>
+                            </div>
+                            <div style="text-align: center;">
+                                <div style="font-weight: 600; font-size: 1.2rem;">< 1hr</div>
+                                <small>Response Time</small>
+                            </div>
+                        </div>
+                        <div style="text-align: center;">
+                            <i class="fas fa-shield-alt" style="font-size: 1.5rem; margin-right: 0.5rem;"></i>
+                            <span style="font-weight: 600;">Professional Support Guaranteed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-container">
+                <form id="contactForm" class="card">
+                    <h3>Send Us a Message</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="priority">Priority Level</label>
+                        <select id="priority" required>
+                            <option value="">Select Priority</option>
+                            <option value="low">Low Priority</option>
+                            <option value="medium">Medium Priority</option>
+                            <option value="high">High Priority</option>
+                            <option value="urgent">Urgent</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="index.html" class="footer-logo">
+                    <div class="logo-icon">
+                        <div class="logo-glow"></div>
+                        <div class="logo-inner">DS</div>
+                    </div>
+                    <span class="logo-text">Dern-Support</span>
+                </a>
+                <p>Professional IT technical support for businesses and individuals. We fix your tech problems so you can focus on what matters.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="support-request.html?type=business">Business IT Support</a></li>
+                    <li><a href="support-request.html?type=individual">Individual Computer Repair</a></li>
+                    <li><a href="knowledge-base.html">Knowledge Base</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h3>About Us</h3>
+                <ul>
+                    <li><a href="#team">Our Team</a></li>
+                    <li><a href="#mission">Our Mission</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Dern-Support. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Back to top button -->
+<button id="backToTop" class="back-to-top">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
+<script src="layout/layout.js"></script>
+</body>
+</html>

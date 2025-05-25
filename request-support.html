@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Support | Dern-Support</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Effects -->
+  <canvas id="backgroundCanvas"></canvas>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <div class="logo-icon">
+            <div class="logo-glow"></div>
+            <div class="logo-inner">DS</div>
+          </div>
+          <span class="logo-text">Dern-Support</span>
+        </a>
+      </div>
+
+      <nav class="nav-desktop">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown-content">
+              <a href="request-support.html?type=business">Business Support</a>
+              <a href="request-support.html?type=individual">Individual Support</a>
+              <a href="knowledge-base.html">Knowledge Base</a>
+            </div>
+          </li>
+          <li><a href="knowledge-base.html">Knowledge Base</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+          <button class="btn btn-outline" onclick="window.location.href='login.html'">
+            <i class="fas fa-user"></i> Login
+          </button>
+          <div class="dropdown">
+            <button class="btn btn-ghost">Admin</button>
+            <div class="dropdown-content">
+              <a href="admin-panel.html"><i class="fas fa-shield-alt"></i> Admin Panel</a>
+              <a href="master-admin.html"><i class="fas fa-shield-virus"></i> Master Admin</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="knowledge-base.html">Knowledge Base</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li class="mobile-nav-buttons">
+          <button class="btn btn-outline" onclick="window.location.href='login.html'">
+            <i class="fas fa-user"></i> Login
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+      <div class="container">
+        <h1>Request Support</h1>
+        <p>Tell us about your technical issue and we'll provide the expert support you need</p>
+      </div>
+    </section>
+
+    <!-- Support Request Section -->
+    <section class="support-request">
+      <div class="container">
+        <div class="support-tabs">
+          <div class="tab-header">
+            <button class="tab-btn active" data-target="business-form">
+              <i class="fas fa-building"></i>
+              Business Support
+            </button>
+            <button class="tab-btn" data-target="individual-form">
+              <i class="fas fa-user"></i>
+              Individual Support
+            </button>
+          </div>
+
+          <!-- Business Support Form -->
+          <div class="tab-content active" id="business-form">
+            <div class="support-intro">
+              <div class="support-icon">
+                <i class="fas fa-building"></i>
+              </div>
+              <div>
+                <h2>Business IT Support</h2>
+                <p>Complete the form below to request on-site technical assistance for your company. Our team will contact you within 4 business hours to schedule a visit.</p>
+              </div>
+            </div>
+
+            <form class="support-form" onsubmit="submitBusinessForm(event)">
+              <div class="form-section">
+                <h3>Company Information</h3>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="companyName" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="industry">Industry</label>
+                    <select id="industry" name="industry" required>
+                      <option value="" disabled selected>Select your industry</option>
+                      <option value="technology">Technology</option>
+                      <option value="healthcare">Healthcare</option>
+                      <option value="finance">Finance</option>
+                      <option value="education">Education</option>
+                      <option value="retail">Retail</option>
+                      <option value="manufacturing">Manufacturing</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="companySize">Company Size</label>
+                    <select id="companySize" name="companySize" required>
+                      <option value="" disabled selected>Select company size</option>
+                      <option value="1-10">1-10 employees</option>
+                      <option value="11-50">11-50 employees</option>
+                      <option value="51-200">51-200 employees</option>
+                      <option value="201-500">201-500 employees</option>
+                      <option value="500+">500+ employees</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="companyAddress">Company Address</label>
+                    <input type="text" id="companyAddress" name="companyAddress" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>Contact Information</h3>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactName">Contact Name</label>
+                    <input type="text" id="contactName" name="contactName" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="contactPosition">Position</label>
+                    <input type="text" id="contactPosition" name="contactPosition" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="contactEmail">Email</label>
+                    <input type="email" id="contactEmail" name="contactEmail" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="contactPhone">Phone</label>
+                    <input type="tel" id="contactPhone" name="contactPhone" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>Support Details</h3>
+                <div class="form-group">
+                  <label for="supportType">Type of Support Needed</label>
+                  <select id="supportType" name="supportType" required>
+                    <option value="" disabled selected>Select support type</option>
+                    <option value="network">Network Infrastructure</option>
+                    <option value="server">Server Management</option>
+                    <option value="backup">Data Backup & Recovery</option>
+                    <option value="security">Cybersecurity</option>
+                    <option value="hardware">Hardware Issues</option>
+                    <option value="software">Software Issues</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="urgency">Urgency Level</label>
+                  <select id="urgency" name="urgency" required>
+                    <option value="" disabled selected>Select urgency level</option>
+                    <option value="low">Low - Not affecting operations</option>
+                    <option value="medium">Medium - Partially affecting operations</option>
+                    <option value="high">High - Significantly affecting operations</option>
+                    <option value="critical">Critical - Operations halted</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="issueDescription">Issue Description</label>
+                  <textarea id="issueDescription" name="issueDescription" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="preferredDate">Preferred Visit Date</label>
+                  <input type="date" id="preferredDate" name="preferredDate" required>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-lg">Submit Business Request</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- Individual Support Form -->
+          <div class="tab-content" id="individual-form">
+            <div class="support-intro">
+              <div class="support-icon">
+                <i class="fas fa-user"></i>
+              </div>
+              <div>
+                <h2>Individual IT Support</h2>
+                <p>Complete the form below to request support for your personal device. Our team will contact you within 24 hours to arrange drop-off or pickup.</p>
+              </div>
+            </div>
+
+            <form class="support-form" onsubmit="submitIndividualForm(event)">
+              <div class="form-section">
+                <h3>Personal Information</h3>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" name="address" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>Device Information</h3>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="deviceType">Device Type</label>
+                    <select id="deviceType" name="deviceType" required>
+                      <option value="" disabled selected>Select device type</option>
+                      <option value="laptop">Laptop</option>
+                      <option value="desktop">Desktop</option>
+                      <option value="tablet">Tablet</option>
+                      <option value="smartphone">Smartphone</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="brand">Brand</label>
+                    <input type="text" id="brand" name="brand" placeholder="e.g., Dell, Apple, Samsung" required>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="model">Model</label>
+                    <input type="text" id="model" name="model" placeholder="e.g., XPS 15, MacBook Pro, Galaxy S21" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="operatingSystem">Operating System</label>
+                    <select id="operatingSystem" name="operatingSystem" required>
+                      <option value="" disabled selected>Select operating system</option>
+                      <option value="windows">Windows</option>
+                      <option value="macos">macOS</option>
+                      <option value="linux">Linux</option>
+                      <option value="android">Android</option>
+                      <option value="ios">iOS</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-section">
+                <h3>Issue Details</h3>
+                <div class="form-group">
+                  <label for="issueType">Type of Issue</label>
+                  <select id="issueType" name="issueType" required>
+                    <option value="" disabled selected>Select issue type</option>
+                    <option value="hardware">Hardware Problem</option>
+                    <option value="software">Software Problem</option>
+                    <option value="virus">Virus/Malware</option>
+                    <option value="data">Data Recovery</option>
+                    <option value="upgrade">Hardware Upgrade</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="individualIssueDescription">Issue Description</label>
+                  <textarea id="individualIssueDescription" name="individualIssueDescription" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                  <label>Service Type</label>
+                  <div class="radio-group">
+                    <div class="radio-option">
+                      <input type="radio" id="dropOff" name="serviceType" value="dropOff" checked>
+                      <label for="dropOff">Drop-off at Service Center</label>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="pickup" name="serviceType" value="pickup">
+                      <label for="pickup">Request Pickup (Additional Fee)</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary btn-lg">Submit Individual Request</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="index.html">
+            <div class="logo-icon">
+              <div class="logo-glow"></div>
+              <div class="logo-inner">DS</div>
+            </div>
+            <span class="logo-text">Dern-Support</span>
+          </a>
+        </div>
+        <p class="footer-description">Your trusted partner for all your IT support needs.</p>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Dern-Support. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Tab functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabButtons = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const target = this.getAttribute('data-target');
+          
+          // Remove active class from all buttons and contents
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabContents.forEach(content => content.classList.remove('active'));
+          
+          // Add active class to clicked button and target content
+          this.classList.add('active');
+          document.getElementById(target).classList.add('active');
+        });
+      });
+
+      // Check URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const type = urlParams.get('type');
+      
+      if (type === 'individual') {
+        document.querySelector('[data-target="individual-form"]').click();
+      }
+    });
+
+    // Form submission functions
+    function submitBusinessForm(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const companyName = formData.get('companyName');
+      alert(`✅ Business support request submitted successfully for ${companyName}!\n\nOur team will contact you within 4 business hours.`);
+      event.target.reset();
+    }
+
+    function submitIndividualForm(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const fullName = formData.get('fullName');
+      alert(`✅ Individual support request submitted successfully for ${fullName}!\n\nOur team will contact you within 24 hours.`);
+      event.target.reset();
+    }
+
+    // Mobile menu toggle
+    document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

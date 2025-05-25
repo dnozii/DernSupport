@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Admin Panel | Dern-Support</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Master Admin Layout -->
+  <div class="admin-layout">
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-logo">
+        <div class="logo-icon">
+          <div class="logo-glow"></div>
+          <div class="logo-inner">DS</div>
+        </div>
+        <span class="logo-text">Master Admin</span>
+      </div>
+
+      <nav class="admin-nav">
+        <ul>
+          <li class="active">
+            <a href="master-admin.html">
+              <i class="fas fa-crown"></i>
+              <span>Master Dashboard</span>
+            </a>
+          </li>
+          <li>
+            <a href="#user-management">
+              <i class="fas fa-users-cog"></i>
+              <span>User Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="#system-settings">
+              <i class="fas fa-cogs"></i>
+              <span>System Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#security-logs">
+              <i class="fas fa-shield-alt"></i>
+              <span>Security Logs</span>
+            </a>
+          </li>
+          <li>
+            <a href="#database-management">
+              <i class="fas fa-database"></i>
+              <span>Database Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="#backup-restore">
+              <i class="fas fa-cloud-download-alt"></i>
+              <span>Backup & Restore</span>
+            </a>
+          </li>
+          <li>
+            <a href="#api-management">
+              <i class="fas fa-code"></i>
+              <span>API Management</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="admin-nav-footer">
+        <a href="admin-panel.html" class="btn btn-outline btn-sm">
+          <i class="fas fa-arrow-left"></i> Regular Admin
+        </a>
+        <a href="index.html" class="btn btn-ghost btn-sm" style="margin-top: 0.5rem;">
+          <i class="fas fa-home"></i> Back to Site
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="admin-main">
+      <!-- Header -->
+      <header class="admin-header">
+        <div class="admin-header-left">
+          <button class="admin-menu-toggle" id="adminMenuToggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1><i class="fas fa-crown"></i> Master Admin Dashboard</h1>
+        </div>
+
+        <div class="admin-header-right">
+          <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-sun theme-toggle-icon sun-icon"></i>
+            <i class="fas fa-moon theme-toggle-icon moon-icon"></i>
+          </div>
+          <div class="admin-notifications">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span class="notification-badge">5</span>
+          </div>
+          <div class="admin-user">
+            <div class="admin-avatar" style="background: linear-gradient(135deg, #dc2626, #ef4444);">
+              <i class="fas fa-crown"></i>
+            </div>
+            <span>Master Admin</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="admin-content">
+        <!-- Critical Alerts -->
+        <div class="alert-section">
+          <div class="alert-card critical">
+            <div class="alert-icon">
+              <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <div class="alert-content">
+              <h3>Critical System Alert</h3>
+              <p>Database backup failed at 02:30 AM. Immediate attention required.</p>
+              <div class="alert-actions">
+                <button class="btn btn-primary btn-sm">Investigate</button>
+                <button class="btn btn-outline btn-sm">Dismiss</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Master Stats Grid -->
+        <div class="master-stats-grid">
+          <div class="master-stat-card card">
+            <div class="stat-header">
+              <div class="stat-icon critical">
+                <i class="fas fa-server"></i>
+              </div>
+              <div class="stat-status">
+                <span class="status-indicator critical"></span>
+                <span class="status-text">Critical</span>
+              </div>
+            </div>
+            <div class="stat-content">
+              <h3>System Health</h3>
+              <div class="stat-value">78%</div>
+              <div class="stat-details">
+                <div class="detail-item">
+                  <span>CPU Usage:</span>
+                  <span class="critical">92%</span>
+                </div>
+                <div class="detail-item">
+                  <span>Memory:</span>
+                  <span class="warning">76%</span>
+                </div>
+                <div class="detail-item">
+                  <span>Disk Space:</span>
+                  <span class="success">45%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="master-stat-card card">
+            <div class="stat-header">
+              <div class="stat-icon success">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-status">
+                <span class="status-indicator success"></span>
+                <span class="status-text">Healthy</span>
+              </div>
+            </div>
+            <div class="stat-content">
+              <h3>User Activity</h3>
+              <div class="stat-value">1,847</div>
+              <div class="stat-details">
+                <div class="detail-item">
+                  <span>Active Users:</span>
+                  <span class="success">234</span>
+                </div>
+                <div class="detail-item">
+                  <span>New Registrations:</span>
+                  <span class="info">12</span>
+                </div>
+                <div class="detail-item">
+                  <span>Failed Logins:</span>
+                  <span class="warning">3</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="master-stat-card card">
+            <div class="stat-header">
+              <div class="stat-icon warning">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <div class="stat-status">
+                <span class="status-indicator warning"></span>
+                <span class="status-text">Warning</span>
+              </div>
+            </div>
+            <div class="stat-content">
+              <h3>Security Status</h3>
+              <div class="stat-value">94%</div>
+              <div class="stat-details">
+                <div class="detail-item">
+                  <span>Threats Blocked:</span>
+                  <span class="success">156</span>
+                </div>
+                <div class="detail-item">
+                  <span>Suspicious Activity:</span>
+                  <span class="warning">7</span>
+                </div>
+                <div class="detail-item">
+                  <span>Failed Attacks:</span>
+                  <span class="critical">2</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="master-stat-card card">
+            <div class="stat-header">
+              <div class="stat-icon info">
+                <i class="fas fa-database"></i>
+              </div>
+              <div class="stat-status">
+                <span class="status-indicator success"></span>
+                <span class="status-text">Optimal</span>
+              </div>
+            </div>
+            <div class="stat-content">
+              <h3>Database Performance</h3>
+              <div class="stat-value">98%</div>
+              <div class="stat-details">
+                <div class="detail-item">
+                  <span>Query Speed:</span>
+                  <span class="success">12ms</span>
+                </div>
+                <div class="detail-item">
+                  <span>Connections:</span>
+                  <span class="info">45/100</span>
+                </div>
+                <div class="detail-item">
+                  <span>Last Backup:</span>
+                  <span class="critical">Failed</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Management Panels -->
+        <div class="management-panels">
+          <div class="panel-grid">
+            <!-- User Management Panel -->
+            <div class="management-panel card">
+              <div class="panel-header">
+                <h3><i class="fas fa-users-cog"></i> User Management</h3>
+                <button class="btn btn-outline btn-sm">Manage All</button>
+              </div>
+              <div class="panel-content">
+                <div class="quick-actions">
+                  <button class="action-btn">
+                    <i class="fas fa-user-plus"></i>
+                    <span>Add Admin</span>
+                  </button>
+                  <button class="action-btn">
+                    <i class="fas fa-user-lock"></i>
+                    <span>Lock Account</span>
+                  </button>
+                  <button class="action-btn">
+                    <i class="fas fa-key"></i>
+                    <span>Reset Password</span>
+                  </button>
+                </div>
+                <div class="recent-activity">
+                  <h4>Recent Admin Activity</h4>
+                  <div class="activity-item">
+                    <span class="activity-user">John Admin</span>
+                    <span class="activity-action">Modified user permissions</span>
+                    <span class="activity-time">2 hours ago</span>
+                  </div>
+                  <div class="activity-item">
+                    <span class="activity-user">Sarah Manager</span>
+                    <span class="activity-action">Created new admin account</span>
+                    <span class="activity-time">5 hours ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- System Settings Panel -->
+            <div class="management-panel card">
+              <div class="panel-header">
+                <h3><i class="fas fa-cogs"></i> System Settings</h3>
+                <button class="btn btn-outline btn-sm">Configure</button>
+              </div>
+              <div class="panel-content">
+                <div class="settings-grid">
+                  <div class="setting-item">
+                    <div class="setting-info">
+                      <span class="setting-name">Maintenance Mode</span>
+                      <span class="setting-desc">System maintenance status</span>
+                    </div>
+                    <div class="setting-control">
+                      <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="setting-item">
+                    <div class="setting-info">
+                      <span class="setting-name">Auto Backup</span>
+                      <span class="setting-desc">Automatic database backups</span>
+                    </div>
+                    <div class="setting-control">
+                      <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="setting-item">
+                    <div class="setting-info">
+                      <span class="setting-name">Debug Mode</span>
+                      <span class="setting-desc">Enable system debugging</span>
+                    </div>
+                    <div class="setting-control">
+                      <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="toggle-slider"></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- System Logs Table -->
+        <div class="card">
+          <div class="card-header">
+            <h2><i class="fas fa-list-alt"></i> System Logs</h2>
+            <div class="header-actions">
+              <button class="btn btn-outline btn-sm">Export Logs</button>
+              <button class="btn btn-primary btn-sm">Clear Logs</button>
+            </div>
+          </div>
+          <div class="card-content">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Level</th>
+                  <th>Source</th>
+                  <th>Message</th>
+                  <th>User</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2025-05-24 14:30:15</td>
+                  <td><span class="status-badge error">ERROR</span></td>
+                  <td>Database</td>
+                  <td>Backup operation failed - insufficient disk space</td>
+                  <td>System</td>
+                  <td>
+                    <button class="btn btn-icon"><i class="fas fa-eye"></i></button>
+                    <button class="btn btn-icon"><i class="fas fa-download"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2025-05-24 14:25:42</td>
+                  <td><span class="status-badge warning">WARN</span></td>
+                  <td>Authentication</td>
+                  <td>Multiple failed login attempts from IP 192.168.1.100</td>
+                  <td>Unknown</td>
+                  <td>
+                    <button class="btn btn-icon"><i class="fas fa-eye"></i></button>
+                    <button class="btn btn-icon"><i class="fas fa-ban"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2025-05-24 14:20:18</td>
+                  <td><span class="status-badge info">INFO</span></td>
+                  <td>User Management</td>
+                  <td>New admin user created: john.admin@dernsupport.com</td>
+                  <td>Master Admin</td>
+                  <td>
+                    <button class="btn btn-icon"><i class="fas fa-eye"></i></button>
+                    <button class="btn btn-icon"><i class="fas fa-undo"></i></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2025-05-24 14:15:33</td>
+                  <td><span class="status-badge success">SUCCESS</span></td>
+                  <td>System</td>
+                  <td>System health check completed successfully</td>
+                  <td>System</td>
+                  <td>
+                    <button class="btn btn-icon"><i class="fas fa-eye"></i></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="layout/layout.js"></script>
+  <script>
+    // Master Admin specific functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      // Toggle switches
+      const toggleSwitches = document.querySelectorAll('.toggle-switch input');
+      toggleSwitches.forEach(toggle => {
+        toggle.addEventListener('change', function() {
+          const settingName = this.closest('.setting-item').querySelector('.setting-name').textContent;
+          const status = this.checked ? 'enabled' : 'disabled';
+          showNotification(`${settingName} ${status}`, 'info');
+        });
+      });
+
+      // Quick action buttons
+      const actionBtns = document.querySelectorAll('.action-btn');
+      actionBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const action = this.querySelector('span').textContent;
+          showNotification(`${action} action initiated`, 'info');
+        });
+      });
+
+      // Mobile sidebar toggle
+      const menuToggle = document.getElementById('adminMenuToggle');
+      const sidebar = document.querySelector('.admin-sidebar');
+      
+      if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
+          sidebar.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

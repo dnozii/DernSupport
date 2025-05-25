@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request Support | Dern-Support</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Background Effects -->
+  <canvas id="backgroundCanvas"></canvas>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <div class="logo-icon">
+            <div class="logo-glow"></div>
+            <div class="logo-inner">DS</div>
+          </div>
+          <span class="logo-text">Dern-Support</span>
+        </a>
+      </div>
+
+      <nav class="nav-desktop">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="support-request.html">Support Request</a></li>
+          <li><a href="knowledge-base.html">Knowledge Base</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+          <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-sun theme-toggle-icon sun-icon"></i>
+            <i class="fas fa-moon theme-toggle-icon moon-icon"></i>
+          </div>
+          <a href="login.html" class="btn btn-outline">
+            <i class="fas fa-user"></i> Login
+          </a>
+        </div>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Request Support</h1>
+        <p>Tell us about your technical issue and we'll provide the expert support you need</p>
+      </div>
+    </section>
+
+    <section class="support-request">
+      <div class="container">
+        <div class="tabs">
+          <div class="tab-header">
+            <div class="tab active" data-tab="business-tab">Business Support</div>
+            <div class="tab" data-tab="individual-tab">Individual Support</div>
+          </div>
+          
+          <div class="tab-content">
+            <!-- Business Support Form -->
+            <div class="tab-pane active" id="business-tab">
+              <div class="card">
+                <div class="support-intro">
+                  <div class="support-icon">
+                    <i class="fas fa-building"></i>
+                  </div>
+                  <div>
+                    <h2>Business IT Support</h2>
+                    <p>Complete the form below to request on-site technical assistance for your company. Our team will contact you within 4 business hours to schedule a visit.</p>
+                  </div>
+                </div>
+
+                <form id="businessSupportForm" class="support-form">
+                  <div class="form-section">
+                    <h3>Company Information</h3>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="companyName">Company Name</label>
+                        <input type="text" id="companyName" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="industry">Industry</label>
+                        <select id="industry" required>
+                          <option value="" disabled selected>Select your industry</option>
+                          <option value="technology">Technology</option>
+                          <option value="healthcare">Healthcare</option>
+                          <option value="finance">Finance</option>
+                          <option value="education">Education</option>
+                          <option value="retail">Retail</option>
+                          <option value="manufacturing">Manufacturing</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-section">
+                    <h3>Contact Information</h3>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="contactName">Contact Name</label>
+                        <input type="text" id="contactName" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-section">
+                    <h3>Support Details</h3>
+                    <div class="form-group">
+                      <label for="supportType">Type of Support Needed</label>
+                      <select id="supportType" required>
+                        <option value="" disabled selected>Select support type</option>
+                        <option value="network">Network Infrastructure</option>
+                        <option value="server">Server Management</option>
+                        <option value="backup">Data Backup & Recovery</option>
+                        <option value="security">Cybersecurity</option>
+                        <option value="hardware">Hardware Issues</option>
+                        <option value="software">Software Issues</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="issueDescription">Issue Description</label>
+                      <textarea id="issueDescription" rows="5" required></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit Request</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Individual Support Form -->
+            <div class="tab-pane" id="individual-tab">
+              <div class="card">
+                <div class="support-intro">
+                  <div class="support-icon">
+                    <i class="fas fa-user"></i>
+                  </div>
+                  <div>
+                    <h2>Individual IT Support</h2>
+                    <p>Complete the form below to request support for your personal device. Our team will contact you within 24 hours to arrange drop-off or pickup.</p>
+                  </div>
+                </div>
+
+                <form id="individualSupportForm" class="support-form">
+                  <div class="form-section">
+                    <h3>Personal Information</h3>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-section">
+                    <h3>Device Information</h3>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="deviceType">Device Type</label>
+                        <select id="deviceType" required>
+                          <option value="" disabled selected>Select device type</option>
+                          <option value="laptop">Laptop</option>
+                          <option value="desktop">Desktop</option>
+                          <option value="tablet">Tablet</option>
+                          <option value="smartphone">Smartphone</option>
+                          <option value="other">Other</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="brand">Brand</label>
+                        <input type="text" id="brand" placeholder="e.g., Dell, Apple, Samsung" required>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-section">
+                    <h3>Issue Details</h3>
+                    <div class="form-group">
+                      <label for="issueType">Type of Issue</label>
+                      <select id="issueType" required>
+                        <option value="" disabled selected>Select issue type</option>
+                        <option value="hardware">Hardware Problem</option>
+                        <option value="software">Software Problem</option>
+                        <option value="virus">Virus/Malware</option>
+                        <option value="data">Data Recovery</option>
+                        <option value="upgrade">Hardware Upgrade</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="individualIssueDescription">Issue Description</label>
+                      <textarea id="individualIssueDescription" rows="5" required></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="submit" class="btn btn-primary btn-lg">Submit Request</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="layout/layout.js"></script>
+</body>
+</html>

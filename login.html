@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | Dern-Support</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Background Effects -->
+  <canvas id="backgroundCanvas"></canvas>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container">
+      <div class="logo">
+        <a href="index.html">
+          <div class="logo-icon">
+            <div class="logo-glow"></div>
+            <div class="logo-inner">DS</div>
+          </div>
+          <span class="logo-text">Dern-Support</span>
+        </a>
+      </div>
+
+      <nav class="nav-desktop">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="support-request.html">Support Request</a></li>
+          <li><a href="knowledge-base.html">Knowledge Base</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="nav-buttons">
+          <div class="theme-toggle" id="themeToggle">
+            <i class="fas fa-sun theme-toggle-icon sun-icon"></i>
+            <i class="fas fa-moon theme-toggle-icon moon-icon"></i>
+          </div>
+        </div>
+      </nav>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="padding-top: 6rem; min-height: 100vh; display: flex; align-items: center;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto;">
+        
+        <!-- Left Side - Info -->
+        <div>
+          <div class="page-header" style="text-align: left; padding: 0; background: none; border: none;">
+            <div class="badge" style="margin-bottom: 2rem;">
+              <i class="fas fa-user-shield"></i>
+              Secure Access
+            </div>
+            <h1 style="font-size: 3rem; margin-bottom: 1.5rem;">Welcome Back</h1>
+            <p style="font-size: 1.25rem; margin-bottom: 3rem;">Sign in to your account to access our comprehensive IT support services and manage your requests.</p>
+          </div>
+          
+          <div class="card" style="margin-bottom: 2rem;">
+            <h3 style="color: var(--color-primary); margin-bottom: 1.5rem;">
+              <i class="fas fa-star"></i>
+              Why Create an Account?
+            </h3>
+            
+            <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+              <div style="width: 3rem; height: 3rem; background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light)); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-history" style="color: white;"></i>
+              </div>
+              <div>
+                <h4 style="margin-bottom: 0.5rem;">Track Support Requests</h4>
+                <p style="color: var(--color-muted); margin-bottom: 0;">View the status of your current and past support requests in one place.</p>
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+              <div style="width: 3rem; height: 3rem; background: linear-gradient(135deg, var(--color-success), #059669); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-bolt" style="color: white;"></i>
+              </div>
+              <div>
+                <h4 style="margin-bottom: 0.5rem;">Faster Service</h4>
+                <p style="color: var(--color-muted); margin-bottom: 0;">We'll remember your details for quicker support in the future.</p>
+              </div>
+            </div>
+            
+            <div style="display: flex; align-items: flex-start; gap: 1rem;">
+              <div style="width: 3rem; height: 3rem; background: linear-gradient(135deg, var(--color-info), #2563eb); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <i class="fas fa-file-invoice-dollar" style="color: white;"></i>
+              </div>
+              <div>
+                <h4 style="margin-bottom: 0.5rem;">Convenient Billing</h4>
+                <p style="color: var(--color-muted); margin-bottom: 0;">Access your invoices and payment history at any time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Right Side - Auth Forms -->
+        <div>
+          <div class="card">
+            <div class="tabs">
+              <div class="tab-header">
+                <button class="tab active" data-target="login-form">
+                  <i class="fas fa-sign-in-alt"></i>
+                  Login
+                </button>
+                <button class="tab" data-target="register-form">
+                  <i class="fas fa-user-plus"></i>
+                  Register
+                </button>
+              </div>
+              
+              <!-- Login Form -->
+              <div class="tab-pane active" id="login-form">
+                <h2 style="margin-bottom: 0.5rem;">Login to Your Account</h2>
+                <p style="color: var(--color-muted); margin-bottom: 2rem;">Enter your credentials to access your account</p>
+                
+                <form onsubmit="handleLogin(event)">
+                  <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" name="email" placeholder="name@example.com" required>
+                  </div>
+                  <div class="form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                      <label for="loginPassword">Password</label>
+                      <a href="#" style="color: var(--color-primary); font-size: 0.875rem; text-decoration: none;">Forgot password?</a>
+                    </div>
+                    <input type="password" id="loginPassword" name="password" required>
+                  </div>
+                  <div class="form-group">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                      <input type="checkbox" id="remember" style="width: auto;">
+                      <label for="remember" style="margin-bottom: 0;">Remember me</label>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Login
+                  </button>
+                </form>
+              </div>
+              
+              <!-- Register Form -->
+              <div class="tab-pane" id="register-form">
+                <h2 style="margin-bottom: 0.5rem;">Create an Account</h2>
+                <p style="color: var(--color-muted); margin-bottom: 2rem;">Sign up for a new Dern-Support account</p>
+                
+                <!-- Account Type Selector -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                  <button type="button" class="account-type active" data-type="individual" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; background-color: var(--color-primary); color: white; border: none; border-radius: var(--radius-md); cursor: pointer; transition: all var(--transition-normal);">
+                    <i class="fas fa-user"></i>
+                    <span>Individual</span>
+                  </button>
+                  <button type="button" class="account-type" data-type="business" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1rem; background-color: var(--color-secondary); color: var(--color-foreground); border: 1px solid var(--color-border); border-radius: var(--radius-md); cursor: pointer; transition: all var(--transition-normal);">
+                    <i class="fas fa-building"></i>
+                    <span>Business</span>
+                  </button>
+                </div>
+                
+                <form onsubmit="handleRegister(event)">
+                  <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="John Doe" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="registerEmail">Email Address</label>
+                    <input type="email" id="registerEmail" name="email" placeholder="name@example.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" name="password" placeholder="Minimum 6 characters" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                  </div>
+                  <div class="form-group">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                      <input type="checkbox" id="terms" required style="width: auto;">
+                      <label for="terms" style="margin-bottom: 0; font-size: 0.875rem;">
+                        I agree to the <a href="#" style="color: var(--color-primary);">Terms of Service</a> and <a href="#" style="color: var(--color-primary);">Privacy Policy</a>
+                      </label>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-block">
+                    <i class="fas fa-user-plus"></i>
+                    Create Account
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="layout/layout.js"></script>
+  <script>
+    // Tab functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabButtons = document.querySelectorAll('.tab');
+      const tabPanes = document.querySelectorAll('.tab-pane');
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const target = this.getAttribute('data-target');
+          
+          // Remove active class from all buttons and panes
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          tabPanes.forEach(pane => pane.classList.remove('active'));
+          
+          // Add active class to clicked button and target pane
+          this.classList.add('active');
+          document.getElementById(target).classList.add('active');
+        });
+      });
+
+      // Account type selector
+      const accountTypes = document.querySelectorAll('.account-type');
+      accountTypes.forEach(type => {
+        type.addEventListener('click', function() {
+          accountTypes.forEach(t => {
+            t.classList.remove('active');
+            t.style.backgroundColor = 'var(--color-secondary)';
+            t.style.color = 'var(--color-foreground)';
+            t.style.border = '1px solid var(--color-border)';
+          });
+          this.classList.add('active');
+          this.style.backgroundColor = 'var(--color-primary)';
+          this.style.color = 'white';
+          this.style.border = 'none';
+        });
+      });
+    });
+
+    // Login form handler
+    function handleLogin(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const email = formData.get('email');
+      const password = formData.get('password');
+      
+      if (email && password) {
+        // Show success message
+        const button = event.target.querySelector('button[type="submit"]');
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Logging in...';
+        button.disabled = true;
+        
+        setTimeout(() => {
+          alert('✅ Login successful! Redirecting to dashboard...');
+          window.location.href = 'admin-panel.html';
+        }, 1500);
+      } else {
+        alert('❌ Please fill in all fields.');
+      }
+    }
+
+    // Register form handler
+    function handleRegister(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const fullName = formData.get('fullName');
+      const email = formData.get('email');
+      const password = formData.get('password');
+      const confirmPassword = formData.get('confirmPassword');
+      
+      if (!fullName || !email || !password || !confirmPassword) {
+        alert('❌ Please fill in all fields.');
+        return;
+      }
+      
+      if (password !== confirmPassword) {
+        alert('❌ Passwords do not match.');
+        return;
+      }
+      
+      if (password.length < 6) {
+        alert('❌ Password must be at least 6 characters long.');
+        return;
+      }
+      
+      // Show success message
+      const button = event.target.querySelector('button[type="submit"]');
+      const originalText = button.innerHTML;
+      button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Creating Account...';
+      button.disabled = true;
+      
+      setTimeout(() => {
+        alert('✅ Registration successful! Please check your email to verify your account.');
+        event.target.reset();
+        
+        // Switch to login tab after successful registration
+        document.querySelector('[data-target="login-form"]').click();
+        button.innerHTML = originalText;
+        button.disabled = false;
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
